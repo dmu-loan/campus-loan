@@ -1,0 +1,15 @@
+# 파일 경로별 리뷰 담당자 (아래쪽 규칙이 우선 적용됩니다)
+
+# 기본: 둘 다
+*                       @Chae102 @wendygirl1336
+
+# 백엔드
+/backend/               @Chae102
+/docker-compose.yml     @Chae102
+
+# 프론트엔드
+/frontend/              @wendygirl1336
+
+# 공용 약속: 둘 다
+/docs/api.md            @Chae102 @wendygirl1336
+/.github/               @Chae102 @wendygirl1336
