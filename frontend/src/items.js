@@ -41,7 +41,7 @@ function openItemDetail(item, trigger) {
   applyButton.classList.add('primary-button');
   applyButton.disabled = item.available === 0;
   applyButton.textContent = item.available === 0
-    ? '현재 대여 가능한 수량이 없어요' : '이 물품 신청 체험하기';
+    ? '현재 대여 가능한 수량이 없어요' : '이 물품 신청하기';
   applyButton.addEventListener('click', () => {
     if (item.available > 0) location.assign(`/apply?item=${encodeURIComponent(item.id)}`);
   });

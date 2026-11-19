@@ -23,7 +23,7 @@
       <p class="muted">학교생활에 필요한 물품을<br />한울타리 총학생회에서 만나보세요.</p>
     </section>
     <p class="demo-notice">화면 미리보기 · 물품과 수량은 예시이며 실제 재고가 아닙니다.</p>
-    <a class="primary-button apply-entry" href="/apply">대여 신청 체험하기</a>
+    <a class="primary-button apply-entry" href="/apply">대여 신청하기</a>
     <section aria-labelledby="items-title">
       <h2 id="items-title">대여 물품</h2>
       <ul class="item-list" id="item-list"></ul>
@@ -104,7 +104,7 @@
         <header class="student-header"><a href="/">← 학생 홈</a></header>
         <main id="main-content" class="student-main" tabindex="-1">
           <h1>대여 신청</h1>
-          <p class="demo-notice">신청 체험 화면입니다. 실제 접수·예약은 이루어지지 않으며 입력 정보는 저장하지 않습니다.</p>
+          <p class="demo-notice">현재 신청서 작성과 내용 확인까지 가능합니다. 접수는 준비 중입니다.</p>
           <ol class="apply-progress" aria-label="신청 단계">
             <li aria-current="step">1. 이용 안내</li><li>2. 정보 입력</li><li>3. 내용 확인</li>
           </ol>
@@ -116,7 +116,7 @@
                 <p>실제 서비스에서는 신청 이후 담당자의 확인과 승인이 필요합니다.</p>
                 <p>수령 장소·보증금·반납 기한은 실제 운영 안내를 확인해 주세요.</p>
               </div>
-              <label class="check-row"><input type="checkbox" name="understood" aria-describedby="understood-error" /> 실제 접수가 아닌 체험 화면임을 확인했습니다.</label>
+              <label class="check-row"><input type="checkbox" name="understood" aria-describedby="understood-error" /> 대여 이용 안내를 확인했습니다.</label>
               <p id="understood-error" class="field-error"></p>
             </section>
             <section data-step="1" hidden>
@@ -136,9 +136,8 @@
             <div class="apply-actions"><button type="button" id="apply-back" class="secondary-button" hidden>이전</button><button type="submit" id="apply-next" class="primary-button">다음으로</button></div>
           </form>
           <section id="apply-complete" hidden>
-            <h2 tabindex="-1">신청 체험을 완료했어요</h2>
-            <p>실제 대여 신청은 접수되지 않았습니다.</p>
-            <p class="muted">입력 내용은 서버로 전송하거나 이 기기에 저장하지 않았습니다.</p>
+            <h2 tabindex="-1">신청서 확인을 마쳤어요</h2>
+            <p>아직 접수 전입니다. 입력한 내용은 저장되지 않습니다.</p>
             <a class="primary-button" href="/">학생 홈으로 돌아가기</a>
           </section>
         </main>

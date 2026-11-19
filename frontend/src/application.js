@@ -25,7 +25,7 @@ export function initApplication(items) {
       else element.removeAttribute('aria-current');
     });
     back.hidden = step === 0;
-    next.textContent = step === 2 ? '신청 체험 완료하기' : '다음으로';
+    next.textContent = step === 2 ? '확인 마치기' : '다음으로';
     sections[step].querySelector('h2').focus();
   }
 
@@ -68,7 +68,7 @@ export function initApplication(items) {
     clearErrors();
     if (step === 0) {
       if (!form.elements.understood.checked) {
-        displayErrors({ understood: '체험 화면 안내를 확인해 주세요.' });
+        displayErrors({ understood: '대여 이용 안내를 확인해 주세요.' });
         return;
       }
       step = 1;
