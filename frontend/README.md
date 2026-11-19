@@ -1,6 +1,7 @@
 # 프론트엔드
 
-React와 JavaScript로 학생용 모바일 화면 및 관리자용 데스크톱 화면을 구현합니다.
+HTML, CSS, 일반 JavaScript로 학생용 모바일 화면 및 관리자용 데스크톱 화면을 구현합니다.
+React, JSX, TypeScript를 사용하지 않습니다. Vite는 로컬 실행과 빌드에만 사용합니다.
 기존 시안의 색상과 화면 구성을 참고해 기능별로 옮기는 초기 단계입니다.
 
 ## 실행
@@ -20,7 +21,7 @@ npm run dev
 
 ## 현재 범위
 
-- React + Vite 개발 환경, lockfile 및 Node 버전 지정
+- 일반 JavaScript + Vite 개발 환경, lockfile 및 Node 버전 지정
 - 공통 색상, 기본 스타일, 키보드 포커스 및 본문 바로가기
 - 학생용 모바일 레이아웃과 관리자 사이드바·본문 레이아웃
 - `/`, `/admin` 분기 및 알 수 없는 경로 안내
@@ -34,17 +35,21 @@ Escape/닫기 버튼, 팝업 종료 후 선택 버튼으로 포커스 복귀를 
 ## 폴더
 
 ```text
+index.html     학생·관리자 화면 및 물품 카드·상세의 HTML template
 src/
-  components/  공통 UI (Brand)
-  layouts/     학생 및 관리자 화면 틀
-  styles/      공통 스타일과 레이아웃
-  App.jsx      초기 경로 분기
-  main.jsx     React 시작점
+  data/items.js  화면 개발용 예시 물품
+  styles/        공통 스타일과 레이아웃
+  items.js       DOM으로 목록 생성, 상세 팝업 이벤트 처리
+  main.js        경로에 맞는 HTML template 표시
 ```
 
-현재 두 경로만 사용하므로 App에서 분기합니다. 상세 페이지와 신청 단계가
-추가될 때 라우터 도입을 검토합니다. 배포 서버는 `/admin` 같은 직접 접속을
+현재 두 경로는 main.js에서 분기합니다. 링크 이동은 브라우저의 기본 동작을
+사용합니다. 배포 서버는 `/admin` 같은 직접 접속을
 `index.html`로 연결하는 SPA fallback 설정이 필요합니다.
+
+화면은 HTML template을 복제하고, 데이터는 textContent로 입력하며,
+동작은 addEventListener로 연결합니다. 추후 Spring Mustache에 연결할 때
+HTML 구조와 일반 JS 로직을 활용할 수 있으며, 이번에는 백엔드를 수정하지 않았습니다.
 
 ## 다음 작업 순서
 
