@@ -1,0 +1,20 @@
+.demo-notice { margin-bottom: 24px; padding: 12px 16px; border-radius: 10px; background: #edf1f7; color: var(--color-muted); font-size: .8rem; }
+.item-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+.item-card { width: 100%; display: flex; align-items: center; gap: 12px; padding: 16px 12px; border: 1px solid var(--color-border); border-radius: 12px; background: white; color: inherit; text-align: left; cursor: pointer; }
+.item-card:hover { border-color: var(--color-primary); background: #f3f6fa; }
+.item-symbol { flex-shrink: 0; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #edf1f7; color: var(--color-primary); font-size: 1.5rem; }
+.item-info { flex: 1; min-width: 0; }
+.item-info strong, .item-info span, .item-stock strong, .item-stock span { display: block; }
+.item-info span, .item-stock span { font-size: .7rem; }
+.item-stock { flex-shrink: 0; text-align: right; color: var(--color-primary); }
+.unavailable { color: var(--color-muted); }
+.item-dialog { width: min(420px, calc(100% - 32px)); max-height: calc(100dvh - 40px); padding: 24px; border: 0; border-radius: 20px; color: #202b41; }
+.item-dialog::backdrop { background: rgb(14 26 44 / 55%); }
+.dialog-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.close-dialog { min-height: 44px; padding: 8px 16px; border: 1px solid var(--color-border); border-radius: 8px; background: white; cursor: pointer; }
+.item-facts { margin: 24px 0; }
+.item-facts div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--color-border); }
+.item-facts dt { color: var(--color-muted); }
+.item-facts dd { margin: 0; font-weight: 700; }
+.item-caution { padding: 16px; background: #f7f8fb; border-radius: 10px; font-size: .875rem; }
+.apply-placeholder { width: 100%; min-height: 48px; margin-top: 20px; border: 0; border-radius: 10px; background: #e2e6ee; color: #626d80; cursor: not-allowed; }
