@@ -1,0 +1,72 @@
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+}
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 1.05rem; }
+.brand small { color: var(--color-muted); font-size: .7rem; }
+.student-shell {
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fb;
+  border-inline: 1px solid var(--color-border);
+}
+.student-header { padding: 20px 24px; background: white; border-bottom: 1px solid var(--color-border); }
+.student-main { flex: 1; padding: 32px 20px; }
+.student-intro { margin: 0 4px 32px; }
+.student-intro h1 { margin: 12px 0; font-size: 2rem; }
+.empty-state { padding: 32px 0; text-align: center; }
+.empty-state .muted { font-size: .875rem; }
+.empty-symbol {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #edf1f7;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+.student-footer { padding: 24px 16px; text-align: center; font-size: .75rem; color: var(--color-muted); }
+.admin-shell { display: flex; min-height: 100dvh; }
+.admin-sidebar {
+  width: 248px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+  background: white;
+  border-right: 1px solid var(--color-border);
+}
+.admin-nav { margin-top: 44px; }
+.admin-nav a { display: block; padding: 12px 16px; border-radius: 10px; text-decoration: none; }
+.admin-nav a[aria-current='page'] { background: #edf1f7; color: var(--color-primary); font-weight: 700; }
+.student-link { margin-top: auto; padding-top: 24px; font-size: .875rem; color: var(--color-muted); }
+.admin-body { min-width: 0; flex: 1; }
+.admin-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 32px; border-bottom: 1px solid var(--color-border); background: white; }
+.preview-badge { padding: 4px 10px; border-radius: 8px; background: #edf1f7; color: var(--color-muted); font-size: .75rem; }
+.admin-main { max-width: 1200px; padding: 40px 32px; }
+.page-heading { margin-bottom: 28px; }
+.page-heading h1 { margin: 8px 0; }
+.not-found { max-width: 600px; margin: 80px auto; padding: 24px; }
+.not-found p { margin: 16px 0; }
+
+@media (max-width: 720px) {
+  .admin-shell { flex-direction: column; }
+  .admin-sidebar { width: 100%; padding: 20px; border-right: 0; border-bottom: 1px solid var(--color-border); }
+  .admin-nav { margin-top: 20px; }
+  .student-link { padding-top: 16px; }
+  .admin-header { padding: 16px 20px; }
+  .admin-main { padding: 28px 20px; }
+}
