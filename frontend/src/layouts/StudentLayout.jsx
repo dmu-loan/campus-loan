@@ -1,6 +1,7 @@
 import Brand from '../components/Brand.jsx';
 import { useState } from 'react';
 import ItemList from '../components/ItemList.jsx';
+import ItemDetail from '../components/ItemDetail.jsx';
 import { items } from '../data/items.js';
 import '../styles/items.css';
 
@@ -20,7 +21,7 @@ export default function StudentLayout() {
         <section aria-labelledby="items-title">
           <h2 id="items-title">대여 물품</h2>
           <ItemList items={items} onSelect={setSelectedItem} />
-          {selectedItem && <p role="status">{selectedItem.name} 선택됨 · 상세 화면 준비 중</p>}
+          {selectedItem && <ItemDetail item={selectedItem} onClose={() => setSelectedItem(null)} />}
         </section>
       </main>
       <footer className="student-footer">동양미래대학교 한울타리 총학생회</footer>
