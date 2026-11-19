@@ -10,6 +10,5 @@
 # 프론트엔드
 /frontend/              @wendygirl1336
 
-# 공용 약속: 둘 다
-/docs/api.md            @Chae102 @wendygirl1336
+# 공용 설정: 둘 다
 /.github/               @Chae102 @wendygirl1336
