@@ -37,8 +37,14 @@ function openItemDetail(item, trigger) {
     dialog.querySelector(`[data-field="${field}"]`).textContent = value;
   }
   dialog.querySelector('.item-caution').textContent = item.caution;
-  dialog.querySelector('.apply-placeholder').textContent = item.available === 0
-    ? '현재 대여 가능한 수량이 없어요' : '대여 신청 준비 중';
+  const applyButton = dialog.querySelector('.apply-placeholder');
+  applyButton.classList.add('primary-button');
+  applyButton.disabled = item.available === 0;
+  applyButton.textContent = item.available === 0
+    ? '현재 대여 가능한 수량이 없어요' : '이 물품 신청 체험하기';
+  applyButton.addEventListener('click', () => {
+    if (item.available > 0) location.assign(`/apply?item=${encodeURIComponent(item.id)}`);
+  });
   dialog.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => {
     dialog.remove();

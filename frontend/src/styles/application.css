@@ -16,6 +16,8 @@ input:focus-visible, select:focus-visible { outline: 3px solid #547cbc; outline-
 .secondary-button { background: white; color: var(--color-primary); }
 .apply-actions .primary-button { flex: 1; }
 .primary-button:disabled { background: #e2e6ee; border-color: #e2e6ee; color: #626d80; cursor: not-allowed; }
+.apply-entry { width: 100%; margin-bottom: 24px; }
+.apply-placeholder.primary-button:not(:disabled) { background: var(--color-primary); color: white; cursor: pointer; }
 #apply-complete p { margin: 20px 0; }
 #application-summary dd { overflow-wrap: anywhere; text-align: right; min-width: 0; }
 #application-summary dt { flex-shrink: 0; }
