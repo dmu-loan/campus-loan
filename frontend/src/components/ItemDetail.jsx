@@ -5,8 +5,9 @@ export default function ItemDetail({ item, onClose }) {
 
   useEffect(() => {
     const dialog = dialogRef.current;
-    dialog.showModal();
-    return () => dialog.close();
+    // StrictMode의 effect 재실행에서도 close 이벤트로 상태가 초기화되지 않도록 합니다.
+    // 팝업을 닫으면 onClose가 선택 상태를 지우고 dialog DOM도 제거됩니다.
+    if (!dialog.open) dialog.showModal();
   }, []);
 
   return (
