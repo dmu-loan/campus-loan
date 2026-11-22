@@ -244,10 +244,16 @@ function resetForm() {
   try {
     const saved = localStorage.getItem("loan.profile");
     if (saved) {
-      draft = JSON.parse(saved);
-      remember = true;
+      const profile = JSON.parse(saved);
+      if (profile && typeof profile === "object" && !Array.isArray(profile)) {
+        draft = profile;
+        remember = true;
+      }
     }
-  } catch {}
+  } catch {
+    // 저장소가 차단됐거나 저장값이 손상된 경우 빈 신청서로 시작합니다.
+    draft = {};
+  }
   draft.item = selected;
   selected = "";
   // randomUUID is unavailable over plain HTTP on a phone connected by LAN.
