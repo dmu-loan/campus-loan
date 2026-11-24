@@ -1,4 +1,4 @@
-const faqSections = [
+export const faqSections = [
   [
     "대여 신청 및 이용",
     [

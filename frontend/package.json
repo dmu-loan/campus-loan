@@ -21,7 +21,9 @@
     "vite": "^8.3.8"
   },
   "dependencies": {
+    "chart.js": "^4.4.9",
     "react": "^19.3.1",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.3.1"
   }
 }
