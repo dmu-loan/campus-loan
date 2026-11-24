@@ -1,10 +1,14 @@
 # 빌려드립니다 프론트엔드
 
-Node.js 버전은 .nvmrc를 따릅니다. frontend에서 npm ci 후 npm run dev로 실행합니다.
-학생 홈은 /, 대여 신청은 /apply/, 관리자 대시보드는 /admin/, 로그인 화면은 /login/입니다.
+학생 모바일과 관리자 데스크톱 화면을 React(JavaScript·JSX)와 Vite로 구현했습니다. Node 버전은 `.nvmrc`에 있습니다.
 
-기존 Spring 프로젝트의 HTML, CSS, Pretendard 폰트와 이미지를 사용합니다.
-학생 홈·신청 폼, 공통 레이아웃과 로그인 화면은 React(JavaScript·JSX)로 작성하고 Vite로 빌드합니다. 안내와 관리자 내부 화면은 기존 JavaScript를 연결합니다. public/sample-data.json은 화면 확인용 데이터입니다.
-실제 신청·로그인·관리 변경은 서버 연결 후 가능합니다. 신청 정보는 사용자가 기기 저장을 선택한 경우에만 브라우저에 저장합니다.
+```sh
+cd frontend
+npm ci
+npm run dev
+```
 
-npm run lint로 정적 검사를, npm test로 입력 검증 테스트를, npm run build로 배포용 빌드를 실행합니다.
+- 학생 홈 `/`에서 물품 조회, 상세, 신청 내용 확인까지 진행할 수 있습니다. 신청서 바로가기는 `/apply/`입니다.
+- 관리자 `/admin/`에서 대시보드, 주간 집계, 신청·대여 목록, 재고, 통계, 운영 설정과 이력을 조회합니다. 로그인 화면은 `/login/`입니다.
+- 4단계까지의 화면은 예시 데이터를 사용합니다. 실제 로그인, 접수, 승인·반납 및 서버 저장은 이후 연동 범위입니다.
+- `npm run lint`, `npm test`, `npm run build`로 검사합니다.
