@@ -1,8 +1,10 @@
+import { useOutletContext } from "react-router-dom";
+
 import "chart.js/auto";
 import { Chart as ReactChart } from "react-chartjs-2";
 import { useState } from "react";
-import { Pair } from "./shared.jsx";
-import { loanStatus } from "./dashboard.js";
+import { Pair } from "../../../components/Pair";
+import { loanStatus } from "../dashboard/summary";
 
 function series(list, label, keys = []) {
   const values = new Map(keys.map((k) => [k, 0]));
@@ -21,20 +23,49 @@ function periodLabel(issued, period) {
   return d.toISOString().slice(0, 10);
 }
 function Chart({ title, values }) {
-  const series = { labels: values.map(([key]) => key), datasets: [{
-    label: title, data: values.map(([, count]) => count),
-    borderColor: "#536986", backgroundColor: "#7088a9",
-  }] };
-  const options = { animation: false, maintainAspectRatio: false,
-    indexAxis: title === "물품별 대여 횟수" ? "y" : "x",
-    scales: { x: { ticks: { maxRotation: 0, maxTicksLimit: 8 } }, y: { ticks: { precision: 0 } } },
-    plugins: { legend: { display: false } }
+  const series = {
+    labels: values.map(([key]) => key),
+    datasets: [
+      {
+        label: title,
+        data: values.map(([, count]) => count),
+        borderColor: "#536986",
+        backgroundColor: "#7088a9",
+      },
+    ],
   };
-  return <section className="card"><h3>{title}</h3><div className="plot-area">
-    <ReactChart type={title === "대여 추이" ? "line" : "bar"} data={series} options={options} aria-label={title}/>
-  </div><details><summary>수치 보기</summary>{values.map(([key,count])=><Pair key={key} label={key} value={count+"건"}/>)}</details></section>;
+  const options = {
+    animation: false,
+    maintainAspectRatio: false,
+    indexAxis: title === "물품별 대여 횟수" ? "y" : "x",
+    scales: {
+      x: { ticks: { maxRotation: 0, maxTicksLimit: 8 } },
+      y: { ticks: { precision: 0 } },
+    },
+    plugins: { legend: { display: false } },
+  };
+  return (
+    <section className="card">
+      <h3>{title}</h3>
+      <div className="plot-area">
+        <ReactChart
+          type={title === "대여 추이" ? "line" : "bar"}
+          data={series}
+          options={options}
+          aria-label={title}
+        />
+      </div>
+      <details>
+        <summary>수치 보기</summary>
+        {values.map(([key, count]) => (
+          <Pair key={key} label={key} value={count + "건"} />
+        ))}
+      </details>
+    </section>
+  );
 }
-export function AdminStats({ data }) {
+export function StatsPage() {
+  const { data } = useOutletContext();
   const [start, setStart] = useState(""),
     [end, setEnd] = useState(""),
     [id, setId] = useState(""),

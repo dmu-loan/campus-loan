@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {summarizeWeek} from '../src/dashboard.js';
+import {summarizeWeek} from '../src/features/admin/dashboard/summary.js';
 
 test('주간 집계는 삭제된 품목의 기록도 포함하고 기간 밖 대여를 제외한다',()=>{
  const home={now:'2026-11-24T14:00',items:[]};

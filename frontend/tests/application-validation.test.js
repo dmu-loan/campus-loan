@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeApplication, validateApplication } from '../src/validation.mjs';
+import { normalizeApplication, validateApplication } from '../src/features/student/application/validation.js';
 
 const items = [{ id: 'umbrella', available: 2 }, { id: 'blanket', available: 0 }];
 const valid = { department: '컴퓨터소프트웨어공학과', studentNo: '20260001', name: '홍길동', phone: '010-1234-5678', itemId: 'umbrella' };

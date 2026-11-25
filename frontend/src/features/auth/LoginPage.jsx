@@ -1,16 +1,5 @@
 import { useState } from "react";
-
-export function Brand() {
-  return (
-    <a className="brand" href="/">
-      <img src="/img/logo.png" alt="" />
-      <span>
-        빌려드립니다<small>한울타리 총학생회</small>
-      </span>
-    </a>
-  );
-}
-
+import { Brand } from "../../components/Brand";
 export function LoginPage() {
   const [attempted, setAttempted] = useState(false);
   return (

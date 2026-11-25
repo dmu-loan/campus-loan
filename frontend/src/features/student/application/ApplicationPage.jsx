@@ -1,86 +1,30 @@
 import { Fragment, useState } from "react";
-import { validateApplication } from "./validation.mjs";
-
-export function StudentHome({ home, icons, onDetail }) {
-  return (
-    <div className="homegrid">
-      <div>
-        <section className="hero">
-          <span className="pill">{home.closed || "운영 중"}</span>
-          <small>필요할 때, 언제든지</small>
-          <h1>빌려드립니다</h1>
-          <p>한울타리 총학생회 물품 대여 서비스</p>
-        </section>
-        <a href="#apply" className="btn primary cta wide">
-          <img src="/img/box.svg" alt="" />
-          대여하기<span>→</span>
-        </a>
-        <section className="callbox">
-          <img src="/img/call.svg" alt="" />
-          <div>
-            <h3>오늘의 당직자에게 전화하기</h3>
-            <p>총학생회실에 관계자가 없으면 연락해 주세요.</p>
-            <div className="chips duty">
-              <small>오늘 등록된 당직자가 없습니다.</small>
-            </div>
-          </div>
-        </section>
-      </div>
-      <section>
-        <div className="sectiontitle">
-          <h2>현재 대여 가능한 물품</h2>
-          <small>{home.now.replace("T", " ").slice(5, 16)} 기준</small>
-        </div>
-        <div className="items">
-          {home.items.map((item) => (
-            <button
-              key={item.id}
-              className="item"
-              onClick={() => onDetail(item.id)}
-            >
-              {item.photo ? (
-                <img
-                  className="catalog-photo"
-                  alt=""
-                  src={
-                    "/api/items/" +
-                    item.id +
-                    "/photo?v=" +
-                    encodeURIComponent(item.photo)
-                  }
-                />
-              ) : icons[item.id - 1] ? (
-                <img src={"/img/" + icons[item.id - 1] + ".svg"} alt="" />
-              ) : (
-                <span className="item-initial" aria-hidden="true">
-                  {item.title.slice(0, 1)}
-                </span>
-              )}
-              <span>
-                {item.title}
-                <small>{`총 ${item.total}개 · 대여 중 ${item.rented}개`}</small>
-              </span>
-              <span className="num">
-                {item.available}개<small>대여 가능</small>
-              </span>
-              <span aria-hidden="true">›</span>
-            </button>
-          ))}
-        </div>
-      </section>
-    </div>
-  );
-}
-
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useOutletContext,
+} from "react-router-dom";
+import { readProfile } from "./readProfile";
+import { rules } from "./rules";
+import { validateApplication } from "./validation";
 const titles = [
   "현금 보증금 10,000원 이상 필요",
   "신분증 지참 필요",
   "총학생회실에서 직접 수령",
   "부재 시 당직자에게 전화",
 ];
-export function Application({ home, initial, saved, rules, notify }) {
+export function ApplicationPage() {
+  const { home, notify } = useOutletContext();
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  const [profile] = useState(readProfile);
+  const saved = Boolean(profile);
   const [step, setStep] = useState(1);
-  const [form, setForm] = useState(initial);
+  const [form, setForm] = useState(() => ({
+    ...profile,
+    item: state?.itemId ?? "",
+  }));
   const [remember, setRemember] = useState(saved);
   const item = home.items.find((i) => String(i.id) === String(form.item));
   const image = (name) => (
@@ -164,9 +108,9 @@ export function Application({ home, initial, saved, rules, notify }) {
       <section className="panel receipt">
         <h1>신청서 확인을 마쳤어요</h1>
         <p>서버 연결 전으로 신청서는 접수되지 않았습니다.</p>
-        <a href="#home" className="btn primary wide">
+        <Link to="/" className="btn primary wide">
           홈으로
-        </a>
+        </Link>
       </section>
     );
   const arrow = image(
@@ -178,9 +122,7 @@ export function Application({ home, initial, saved, rules, notify }) {
       <div className="wizard-bar">
         <button
           aria-label="이전"
-          onClick={() =>
-            step === 1 ? (location.hash = "home") : move(step - 1)
-          }
+          onClick={() => (step === 1 ? navigate("/") : move(step - 1))}
         >
           {image(
             step === 3 ? "DashiconsArrowRightAlt2" : "DashiconsArrowRightAlt3",
