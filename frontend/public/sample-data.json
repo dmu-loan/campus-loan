@@ -1,0 +1,365 @@
+{
+  "home": {
+    "now": "2026-11-18T14:30",
+    "closed": "",
+    "policy": {
+      "weekdays": "12345",
+      "opens": "09:00:00",
+      "closes": "17:00:00"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "축구공",
+        "next_day": false,
+        "total": 5,
+        "rented": 2,
+        "available": 3,
+        "due": "2026-11-18T17:00"
+      },
+      {
+        "id": 2,
+        "title": "농구공",
+        "next_day": false,
+        "total": 4,
+        "rented": 1,
+        "available": 3,
+        "due": "2026-11-18T17:00"
+      },
+      {
+        "id": 3,
+        "title": "피구공",
+        "next_day": false,
+        "total": 2,
+        "rented": 0,
+        "available": 2,
+        "due": "2026-11-18T17:00"
+      },
+      {
+        "id": 4,
+        "title": "우산",
+        "next_day": true,
+        "total": 10,
+        "rented": 3,
+        "available": 7,
+        "due": "2026-11-19T17:00"
+      },
+      {
+        "id": 5,
+        "title": "보조배터리 C-type",
+        "next_day": false,
+        "total": 6,
+        "rented": 2,
+        "available": 4,
+        "due": "2026-11-18T17:00"
+      },
+      {
+        "id": 6,
+        "title": "보조배터리 8pin",
+        "next_day": false,
+        "total": 6,
+        "rented": 1,
+        "available": 5,
+        "due": "2026-11-18T17:00"
+      },
+      {
+        "id": 7,
+        "title": "야구 글러브 + 야구공",
+        "next_day": false,
+        "total": 4,
+        "rented": 1,
+        "available": 3,
+        "due": "2026-11-18T17:00"
+      },
+      {
+        "id": 8,
+        "title": "배드민턴 라켓 + 셔틀콕",
+        "next_day": false,
+        "total": 4,
+        "rented": 0,
+        "available": 4,
+        "due": "2026-11-18T17:00"
+      }
+    ],
+    "departments": {
+      "컴퓨터공학부": [
+        "웹응용소프트웨어공학과",
+        "컴퓨터소프트웨어공학과"
+      ]
+    },
+    "closures": [
+      {
+        "id": 1,
+        "starts": "2026-11-23",
+        "ends": "2026-11-27",
+        "reason": "기말고사 준비 기간"
+      }
+    ]
+  },
+  "requests": [
+    {
+      "id": 1,
+      "student_no": "20260001",
+      "name": "가상학생 A",
+      "phone": "01000000000",
+      "faculty": "컴퓨터공학부",
+      "department": "웹응용소프트웨어공학과",
+      "title": "축구공",
+      "item_id": 1,
+      "created": "2026-11-18T14:10",
+      "state": "PENDING"
+    },
+    {
+      "id": 2,
+      "student_no": "20260002",
+      "name": "가상학생 B",
+      "phone": "01000000000",
+      "faculty": "컴퓨터공학부",
+      "department": "웹응용소프트웨어공학과",
+      "title": "농구공",
+      "item_id": 2,
+      "created": "2026-11-18T14:10",
+      "state": "PENDING"
+    }
+  ],
+  "loans": [
+    {
+      "id": 1,
+      "student_no": "20260011",
+      "name": "가상학생 1",
+      "phone": "01000000000",
+      "title": "축구공",
+      "item_id": 1,
+      "officer": "담당 임원 A",
+      "codes": "D-1",
+      "issued": "2026-11-18T11:00",
+      "due": "2026-11-18T17:00",
+      "returned": null,
+      "late": false,
+      "deposit_received": true,
+      "card_received": true,
+      "deposit_back": false,
+      "card_back": false,
+      "memo": "",
+      "exception_reason": null
+    },
+    {
+      "id": 2,
+      "student_no": "20260012",
+      "name": "가상학생 2",
+      "phone": "01000000000",
+      "title": "농구공",
+      "item_id": 2,
+      "officer": "담당 임원 A",
+      "codes": "C-1",
+      "issued": "2026-11-18T11:00",
+      "due": "2026-11-18T17:00",
+      "returned": null,
+      "late": false,
+      "deposit_received": true,
+      "card_received": true,
+      "deposit_back": false,
+      "card_back": false,
+      "memo": "",
+      "exception_reason": null
+    },
+    {
+      "id": 3,
+      "student_no": "20260013",
+      "name": "가상학생 3",
+      "phone": "01000000000",
+      "title": "피구공",
+      "item_id": 3,
+      "officer": "담당 임원 A",
+      "codes": "V-1",
+      "issued": "2026-11-18T11:00",
+      "due": "2026-11-18T17:00",
+      "returned": "2026-11-18T13:00",
+      "late": false,
+      "deposit_received": true,
+      "card_received": true,
+      "deposit_back": true,
+      "card_back": true,
+      "memo": "",
+      "exception_reason": null
+    }
+  ],
+  "units": [
+    {
+      "id": 11,
+      "item_id": 1,
+      "code": "1-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 12,
+      "item_id": 1,
+      "code": "1-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 13,
+      "item_id": 1,
+      "code": "1-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 21,
+      "item_id": 2,
+      "code": "2-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 22,
+      "item_id": 2,
+      "code": "2-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 23,
+      "item_id": 2,
+      "code": "2-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 31,
+      "item_id": 3,
+      "code": "3-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 32,
+      "item_id": 3,
+      "code": "3-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 33,
+      "item_id": 3,
+      "code": "3-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 41,
+      "item_id": 4,
+      "code": "4-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 42,
+      "item_id": 4,
+      "code": "4-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 43,
+      "item_id": 4,
+      "code": "4-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 51,
+      "item_id": 5,
+      "code": "5-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 52,
+      "item_id": 5,
+      "code": "5-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 53,
+      "item_id": 5,
+      "code": "5-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 61,
+      "item_id": 6,
+      "code": "6-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 62,
+      "item_id": 6,
+      "code": "6-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 63,
+      "item_id": 6,
+      "code": "6-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 71,
+      "item_id": 7,
+      "code": "7-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 72,
+      "item_id": 7,
+      "code": "7-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 73,
+      "item_id": 7,
+      "code": "7-3",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 81,
+      "item_id": 8,
+      "code": "8-1",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 82,
+      "item_id": 8,
+      "code": "8-2",
+      "state": "AVAILABLE"
+    },
+    {
+      "id": 83,
+      "item_id": 8,
+      "code": "8-3",
+      "state": "AVAILABLE"
+    }
+  ],
+  "staff": [
+    {
+      "id": 1,
+      "name": "담당 임원 A",
+      "phone": "01000000000",
+      "username": "staff1"
+    },
+    {
+      "id": 2,
+      "name": "담당 임원 B",
+      "phone": "",
+      "username": null
+    }
+  ],
+  "sheetId": "문서 연결됨",
+  "borrowers": [
+    {
+      "student_no": "20260001",
+      "name": "가상학생 A",
+      "late_count": 2,
+      "suspended": false
+    }
+  ],
+  "audit": [
+    {
+      "id": 1,
+      "happened": "2026-11-18T14:20",
+      "actor": "담당 임원 A",
+      "detail": "신청 #3 승인 · 대여 #3"
+    }
+  ],
+  "todayRequests": 7
+}
