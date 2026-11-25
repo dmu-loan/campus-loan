@@ -101,9 +101,14 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - run: npm ci
-      - run: npm run lint --if-present
-      - run: npm run build
+      - name: 의존성 설치
+        run: npm ci
+      - name: 린트
+        run: npm run lint --if-present
+      - name: 테스트
+        run: npm run test --if-present
+      - name: 빌드
+        run: npm run build
 
   # Rulesets의 필수 체크로 이 job 하나만 지정합니다.
   ci-result:
