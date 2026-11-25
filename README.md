@@ -208,6 +208,7 @@ docker compose down -v       # MySQL 초기화 (데이터 삭제)
 # 프론트엔드 (frontend/)
 npm run dev                  # 개발 서버 실행
 npm run lint                 # 린트 검사
+npm run test                 # 테스트
 npm run build                # 프로덕션 빌드
 ```
 
@@ -271,7 +272,7 @@ style(fe): Prettier 적용
 ./gradlew spotlessApply && ./gradlew check
 
 # 프론트엔드
-npm run lint && npm run build
+npm run lint && npm run test && npm run build
 ```
 
 PR과 `develop`·`main` 푸시 때 GitHub Actions가 바뀐 영역만 같은 검사를 실행합니다. 최종 결과 체크 `ci-result`가 통과해야 병합할 수 있습니다.
